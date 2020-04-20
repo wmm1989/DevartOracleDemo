@@ -1,0 +1,600 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JQ.Common</name>
+    </assembly>
+    <members>
+        <member name="M:JQ.Common.Helpers.AppSettingHelper.App(System.String[])">
+            <summary>
+            按照层级获取
+            </summary>
+            <param name="sections"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.Helpers.AppSettingHelper.App(System.String,System.String,System.String)">
+            <summary>
+            只能获取123层，且支持最后一个加密解密处理
+            </summary>
+            <param name="sections"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JQ.Common.Helpers.EnumHelper">
+            <summary>
+            枚举操作助手
+            </summary>
+        </member>
+        <member name="M:JQ.Common.Helpers.EnumHelper.GetEnumList(System.Type)">
+            <summary>
+            根据枚举类型返回类型中的所有值，文本及描述
+            </summary>
+            <param name="type"></param>
+            <returns>返回三列数组，第0列为Description,第1列为Value，第2列为Text</returns>
+        </member>
+        <member name="M:JQ.Common.Helpers.EnumHelper.GetEnumDescription(System.Object)">
+            <summary>
+            获取枚举类子项描述信息
+            </summary>
+            <param name="enumSubitem">枚举类子项</param>        
+        </member>
+        <member name="M:JQ.Common.Helpers.EnumHelper.EnumListDic``1">
+            <summary>
+             枚举转成dictionary类， 取name 为key  取desc为value
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.Helpers.EnumHelper.EnumDic``1">
+            <summary>
+            将枚举的值和描述转成Dictionary
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.Helpers.EnumHelper.EnumToList``1">
+            <summary>
+            枚举转成实体类集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:JQ.Common.Helpers.FileHelper">
+            <summary>
+            文件操作助手类 有空在进行补充
+            </summary>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.FileToString(System.String)">
+            <summary>
+            获取文件内的数据进行返回
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.IsExistDirectory(System.String)">
+            <summary>
+            检测指定目录是否存在
+            </summary>
+            <param name="directoryPath">目录的绝对路径</param>        
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.IsExistFile(System.String)">
+            <summary>
+            检查文件是否存在
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.CreateDirectory(System.String)">
+            <summary>
+            创建一个目录
+            </summary>
+            <param name="directoryPath">目录的绝对路径</param>
+        </member>
+        <member name="F:JQ.Common.Helpers.FileHelper.sync">
+            <summary>
+            同步标识
+            </summary>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.GetAllFileName(System.String)">
+            <summary>
+            获取目录下全部文件的文件名
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.GetDirectoryFromFilePath(System.String)">
+            <summary>
+            从文件绝对路径中获取目录路径
+            </summary>
+            <param name="filePath">文件的绝对路径</param>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.CreateFile(Microsoft.AspNetCore.Http.IFormFile,System.String,System.String)">
+            <summary>
+            保存文件
+            </summary>
+            <param name="path"></param>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.CreateFile(System.String)">
+            <summary>
+            创建一个文件
+            </summary>
+            <param name="filePath">文件的绝对路径</param>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.CreateFile(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            创建一个文件,并将字符串写入文件。
+            </summary>
+            <param name="filePath">文件的绝对路径</param>
+            <param name="text">字符串数据</param>
+            <param name="encoding">字符编码</param>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.WriteText(System.String,System.String)">
+            <summary>
+            向文本文件中写入内容
+            </summary>
+            <param name="filePath">文件的绝对路径</param>
+            <param name="text">写入的内容</param>        
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.WriteText(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            向文本文件中写入内容
+            </summary>
+            <param name="filePath">文件的绝对路径</param>
+            <param name="text">写入的内容</param>
+            <param name="encoding">编码</param>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.Copy(System.String,System.String)">
+            <summary>
+            将源文件的内容复制到目标文件中
+            </summary>
+            <param name="sourceFilePath">源文件的绝对路径</param>
+            <param name="destFilePath">目标文件的绝对路径</param>
+        </member>
+        <member name="M:JQ.Common.Helpers.FileHelper.DelectDir(System.String,System.String,System.String)">
+            <summary>
+            删除目录下除了notDeleteFileName的所有文件
+            </summary>
+            <param name="srcPath"></param>
+        </member>
+        <member name="T:JQ.Common.Model.Base_Fee_Item_Class">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_Fee_Item_Class.Org_Code">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_Fee_Item_Class.TreeID">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_Fee_Item_Class.TreePID">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_Fee_Item_Class.IncomeProjectClassID">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_Fee_Item_Class.IncomeProjectClassName">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_Fee_Item_Class.PYM">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_Fee_Item_Class.WBM">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="T:JQ.Common.Model.Base_PRCAddress_Dict">
+            <summary>
+            中华人民共和国行政区划代码
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_PRCAddress_Dict.Org_Code">
+            <summary>
+            Desc:机构ID
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_PRCAddress_Dict.AreaStandardCode">
+            <summary>
+            Desc:行政区划标准代码
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_PRCAddress_Dict.AreaStandardName">
+            <summary>
+            Desc:行政区划标准名称
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_PRCAddress_Dict.AreaNumber">
+            <summary>
+            Desc:行政区划编号
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_PRCAddress_Dict.AreaName">
+            <summary>
+            Desc:行政区划名称
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_PRCAddress_Dict.SuperiorAreaNumber">
+            <summary>
+            Desc:上级行政区域编号
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_PRCAddress_Dict.AreaLv">
+            <summary>
+            Desc:行政区划级别 自行定义，标准内没有的，方便系统操作
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_PRCAddress_Dict.PYM">
+            <summary>
+            Desc:拼音码
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Base_PRCAddress_Dict.WBM">
+            <summary>
+            Desc:五笔码
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Entity.ID">
+            <summary>
+            Desc:ID 自增，非主键
+            Default:
+            Nullable:False
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Entity.IsDel">
+            <summary>
+            Desc:删除标记
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Entity.Update_By">
+            <summary>
+            Desc:更新人
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Entity.Update_Time">
+            <summary>
+            Desc:更新时间
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Entity.Create_By">
+            <summary>
+            Desc:创建人
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Entity.Create_Time">
+            <summary>
+            Desc:创建时间
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Entity.IsUpload">
+            <summary>
+            Desc:上传标记
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.Model.Entity.Upload_Time">
+            <summary>
+            Desc:上传时间
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="M:JQ.Common.IRepository.IBaseRepository`1.GetPageAsync(JQ.Common.Model.PaginationBase,JQ.Common.Model.IPropertyMapping,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+            <summary>
+            一对多时候进行使用
+            </summary>
+            <param name="paginationBase"></param>
+            <param name="propertyMapping"></param>
+            <param name="whereExpression"></param>
+            <param name="isIgnoreQueryFilters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.IRepository.IBaseRepository`1.GetPageAsync(JQ.Common.Model.PaginationBase,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+            <summary>
+            单表分页
+            </summary>
+            <param name="paginationBase"></param>
+            <param name="whereExpression"></param>
+            <param name="isIgnoreQueryFilters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.IServices.IBaseServices`1.GetPageAsync(JQ.Common.Model.PaginationBase,JQ.Common.Model.IPropertyMapping,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+            <summary>
+            一对多时候进行使用
+            </summary>
+            <param name="paginationBase"></param>
+            <param name="propertyMapping"></param>
+            <param name="whereExpression"></param>
+            <param name="isIgnoreQueryFilters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JQ.Common.IServices.IBaseServices`1.GetPageAsync(JQ.Common.Model.PaginationBase,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+            <summary>
+            单表分页
+            </summary>
+            <param name="paginationBase"></param>
+            <param name="whereExpression"></param>
+            <param name="isIgnoreQueryFilters"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassParameters.ID">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassParameters.TreeID">
+            <summary>
+            Desc:ID
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassParameters.TreePID">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassParameters.IncomeProjectClassID">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassParameters.IncomeProjectClassName">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassParameters.PYM">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassParameters.WBM">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictParameters.AreaNumber">
+            <summary>
+            Desc:行政区划编号
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictParameters.AreaName">
+            <summary>
+            Desc:行政区划名称
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictParameters.SuperiorAreaNumber">
+            <summary>
+            Desc:上级行政区域编号
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictParameters.AreaLv">
+            <summary>
+            Desc:行政区划级别 
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictParameters.PYM">
+            <summary>
+            Desc:拼音码
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictParameters.WBM">
+            <summary>
+            Desc:五笔码
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.ID">
+            <summary>
+            Desc:
+            Default:
+            Nullable:False
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.Org_Code">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.TreeID">
+            <summary>
+            Desc:ID
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.TreePID">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.IncomeProjectClassID">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.IncomeProjectClassName">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.Update_By">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.Update_Time">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.PYM">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.WBM">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.Create_By">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.Create_Time">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BaseFeeItemClassViewModel.IsExists">
+            <summary>
+            Desc:
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictViewModel.AreaNumber">
+            <summary>
+            Desc:行政区划编号
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictViewModel.AreaName">
+            <summary>
+            Desc:行政区划名称
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictViewModel.SuperiorAreaNumber">
+            <summary>
+            Desc:上级行政区域编号
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictViewModel.AreaLv">
+            <summary>
+            Desc:行政区划级别 
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictViewModel.PYM">
+            <summary>
+            Desc:拼音码
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+        <member name="P:JQ.Common.ViewModel.BasePRCAddressDictViewModel.WBM">
+            <summary>
+            Desc:五笔码
+            Default:
+            Nullable:True
+            </summary>
+        </member>
+    </members>
+</doc>

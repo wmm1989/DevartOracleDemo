@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\JQ.Base.Api\Bin\Debug</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SysServices.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JQ.Base.Infrastructure\JQ.Base.Infrastructure.csproj" />
+    <ProjectReference Include="..\JQ.Base.IServices\JQ.Base.IServices.csproj" />
+    <ProjectReference Include="..\JQ.Common\JQ.Common.csproj" />
+  </ItemGroup>
+
+</Project>

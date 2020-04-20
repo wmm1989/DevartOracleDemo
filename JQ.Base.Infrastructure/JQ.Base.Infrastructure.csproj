@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Order\**" />
+    <EmbeddedResource Remove="Order\**" />
+    <None Remove="Order\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Configs\AutoMapperProfile.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Devart.Data.Oracle.EFCore" Version="9.11.980" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JQ.Base.IServices\JQ.Base.IServices.csproj" />
+    <ProjectReference Include="..\JQ.Common\JQ.Common.csproj" />
+  </ItemGroup>
+
+</Project>
