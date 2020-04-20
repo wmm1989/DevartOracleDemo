@@ -20,4 +20,4 @@ WHERE ("b".ISDEL = 0) AND ((DBMS_LOB.COMPARE("b".SUPERIORAREANUMBER, '0')) = 0)
 -- AND ((DBMS_LOB.COMPARE("b".SUPERIORAREANUMBER, '0')) = 0)  这句话执行非常慢
 
 
-通用的api，原生oracle dll 只需要20ms.而devart oracle 需要2000-20000ms
+同样的api，原生oracle dll 只需要20ms.而devart oracle 需要2000-20000ms
