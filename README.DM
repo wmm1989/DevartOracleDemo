@@ -1,9 +1,9 @@
 
-1: ִ�� init.sql ,���������ݲ��뵽700000������
-2: �޸�appsetting �����ļ�������oracle �����ַ����� ����dbType�ֶ� 2�� ԭ��oracle dll  3��devart .
-3: ���� JQ.Base.api  .   api/base/prcaddressdict  ����SuperiorAreaNumber=0 �� ����鿴
+1: 执行 init.sql ,建表，数据插入到700000条左右
+2: 修改appsetting 配置文件，添加oracle 链接字符串。 其中dbType字段 2是 原先oracle dll  3是devart .
+3: 运行 JQ.Base.api  .   api/base/prcaddressdict  传入SuperiorAreaNumber=0 。 输出查看
 
-dbtype=2   ����
+dbtype=2   如下
 
 SELECT "b".ID, "b".AREALV, "b".AREANAME, "b".AREANUMBER, "b".AREASTANDARDCODE, "b".AREASTANDARDNAME, "b".CREATE_BY, "b".CREATE_NAME, "b".CREATE_TIME, "b".ISDEL, "b".ISUPLOAD, "b".ORG_CODE, "b".PYM, "b".SUPERIORAREANUMBER, "b".UPDATE_BY, "b".UPDATE_NAME, "b".UPDATE_ORG_CODE, "b".UPDATE_TIME, "b".UPLOAD_TIME, "b".WBM
 FROM BASE_PRCADDRESS_DICT "b"
@@ -11,10 +11,13 @@ WHERE ("b".ISDEL = 0) AND ("b".SUPERIORAREANUMBER='0')
 
 --AND ("b".SUPERIORAREANUMBER='0')
 
-dbtype=3 ����
+dbtype=3 如下
 
 SELECT "b".ID, "b".AREALV, "b".AREANAME, "b".AREANUMBER, "b".AREASTANDARDCODE, "b".AREASTANDARDNAME, "b".CREATE_BY, "b".CREATE_NAME, "b".CREATE_TIME, "b".ISDEL, "b".ISUPLOAD, "b".ORG_CODE, "b".PYM, "b".SUPERIORAREANUMBER, "b".UPDATE_BY, "b".UPDATE_NAME, "b".UPDATE_ORG_CODE, "b".UPDATE_TIME, "b".UPLOAD_TIME, "b".WBM
 FROM BASE_PRCADDRESS_DICT "b"
 WHERE ("b".ISDEL = 0) AND ((DBMS_LOB.COMPARE("b".SUPERIORAREANUMBER, '0')) = 0)
 
--- AND ((DBMS_LOB.COMPARE("b".SUPERIORAREANUMBER, '0')) = 0)
+-- AND ((DBMS_LOB.COMPARE("b".SUPERIORAREANUMBER, '0')) = 0)  这句话执行非常慢
+
+
+通用的api，原生oracle dll 只需要20ms.而devart oracle 需要2000-20000ms
